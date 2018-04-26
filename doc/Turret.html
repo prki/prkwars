@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Turret - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="Enemy.html">Enemy</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-take_damage">#take_damage</a>
+    
+    <li ><a href="#method-i-update">#update</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Turret">
+  <h1 id="class-Turret" class="class">
+    class Turret
+  </h1>
+
+  <section class="description">
+    
+<p>Class representing the <a href="Turret.html">Turret</a> enemy unit which is
+stationary and endlessly shoots bullets in the direction of the player.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="HP">HP
+        
+        <dd>
+        
+      
+        <dt id="SHOOT_GAP">SHOOT_GAP
+        
+        <dd>
+        
+      
+        <dt id="VELOCITY">VELOCITY
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(gamespace, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializing a <code>Turret</code> builds a new
+<code>Chingu::Animation</code> with the turret sprites. Each time a
+<code>Turret</code> gets hit, it changes its sprite to better display the
+amount of <a href="Turret.html#HP">HP</a>. Also sets the gamespace instance
+variable, <a href="Turret.html#HP">HP</a> and a shooting timer.</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/turret.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">gamespace</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">options</span>)
+
+  <span class="ruby-ivar">@animation</span> = <span class="ruby-constant">Chingu</span><span class="ruby-operator">::</span><span class="ruby-constant">Animation</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">file</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;media/turrets.png&#39;</span>, <span class="ruby-identifier">size</span><span class="ruby-operator">:</span> <span class="ruby-value">32</span>)
+
+  <span class="ruby-ivar">@gamespace</span> = <span class="ruby-identifier">gamespace</span>
+  <span class="ruby-ivar">@hp</span> = <span class="ruby-constant">HP</span>
+  <span class="ruby-ivar">@shoot_timer</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@image</span> = <span class="ruby-ivar">@animation</span>[<span class="ruby-ivar">@hp</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-take_damage" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">take_damage</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A common <code>Enemy</code> method - reduces the unit&#39;s <a
+href="Turret.html#HP">HP</a> by one and changes the sprite.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="take_damage-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/turret.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">take_damage</span>
+  <span class="ruby-ivar">@hp</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+  <span class="ruby-ivar">@image</span> = <span class="ruby-ivar">@animation</span>[<span class="ruby-ivar">@hp</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Updating a <code>Turret</code> only consists of shooting a bullet if the
+framecounter got far enough.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/turret.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+  <span class="ruby-ivar">@shoot_timer</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@shoot_timer</span> <span class="ruby-operator">==</span> <span class="ruby-constant">SHOOT_GAP</span>
+
+  <span class="ruby-identifier">shoot_bullet</span>
+  <span class="ruby-ivar">@shoot_timer</span> = <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

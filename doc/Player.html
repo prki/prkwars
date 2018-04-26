@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Player - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Chingu::GameObject
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="GamespacePersistence.html">GamespacePersistence</a>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-move_down">#move_down</a>
+    
+    <li ><a href="#method-i-move_left">#move_left</a>
+    
+    <li ><a href="#method-i-move_right">#move_right</a>
+    
+    <li ><a href="#method-i-move_up">#move_up</a>
+    
+    <li ><a href="#method-i-shoot_down">#shoot_down</a>
+    
+    <li ><a href="#method-i-shoot_left">#shoot_left</a>
+    
+    <li ><a href="#method-i-shoot_right">#shoot_right</a>
+    
+    <li ><a href="#method-i-shoot_up">#shoot_up</a>
+    
+    <li ><a href="#method-i-update">#update</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Player">
+  <h1 id="class-Player" class="class">
+    class Player
+  </h1>
+
+  <section class="description">
+    
+<p>Class holding all the logic related to the player - input controller and
+any manipulation of player&#39;s sprite.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="INVUL_FRAMES">INVUL_FRAMES
+        
+        <dd>
+        
+      
+        <dt id="SHOOT_GAP">SHOOT_GAP
+        
+        <dd>
+        
+      
+        <dt id="STARTING_BOMBS">STARTING_BOMBS
+        
+        <dd>
+        
+      
+        <dt id="STARTING_LIVES">STARTING_LIVES
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-invulnerable" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">invulnerable</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-lives" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">lives</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(gamespace, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initialization of player assigns gamespace to the player, their sprite and
+sets the input layout for the player.</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/player.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">gamespace</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">options</span>)
+
+  <span class="ruby-ivar">@image</span> = <span class="ruby-constant">Image</span>[<span class="ruby-string">&#39;./media/player_ship.png&#39;</span>]
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">input</span> = { <span class="ruby-identifier">holding_w</span><span class="ruby-operator">:</span> <span class="ruby-value">:move_up</span>, <span class="ruby-identifier">holding_a</span><span class="ruby-operator">:</span> <span class="ruby-value">:move_left</span>,
+                 <span class="ruby-identifier">holding_d</span><span class="ruby-operator">:</span> <span class="ruby-value">:move_right</span>, <span class="ruby-identifier">holding_s</span><span class="ruby-operator">:</span> <span class="ruby-value">:move_down</span>,
+                 <span class="ruby-identifier">holding_left</span><span class="ruby-operator">:</span> <span class="ruby-value">:shoot_left</span>, <span class="ruby-identifier">holding_right</span><span class="ruby-operator">:</span> <span class="ruby-value">:shoot_right</span>,
+                 <span class="ruby-identifier">holding_up</span><span class="ruby-operator">:</span> <span class="ruby-value">:shoot_up</span>, <span class="ruby-identifier">holding_down</span><span class="ruby-operator">:</span> <span class="ruby-value">:shoot_down</span> }
+  <span class="ruby-identifier">init_vector_variables</span>
+
+  <span class="ruby-ivar">@gamespace</span> = <span class="ruby-identifier">gamespace</span>
+  <span class="ruby-ivar">@lives</span> = <span class="ruby-constant">STARTING_LIVES</span>
+  <span class="ruby-ivar">@bombs</span> = <span class="ruby-constant">STARTING_BOMBS</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-move_down" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">move_down</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A method changing the player&#39;s y position by the
+<code>PLAYER_VELOCITY</code> constant.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="move_down-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/player.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">move_down</span>
+  <span class="ruby-ivar">@y</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">PLAYER_VELOCITY</span>
+  <span class="ruby-ivar">@y_change</span> = <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">PLAYER_VELOCITY</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-move_left" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">move_left</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A method changing the player&#39;s x position by the
+<code>PLAYER_VELOCITY</code> constant.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="move_left-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/player.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">move_left</span>
+  <span class="ruby-ivar">@x</span> <span class="ruby-operator">-=</span> <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">PLAYER_VELOCITY</span>
+  <span class="ruby-ivar">@x_change</span> = <span class="ruby-operator">-</span><span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">PLAYER_VELOCITY</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-move_right" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">move_right</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A method changing the player&#39;s x position by the
+<code>PLAYER_VELOCITY</code> constant.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="move_right-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/player.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">move_right</span>
+  <span class="ruby-ivar">@x</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">PLAYER_VELOCITY</span>
+  <span class="ruby-ivar">@x_change</span> = <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">PLAYER_VELOCITY</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-move_up" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">move_up</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A method changing the player&#39;s y position by the
+<code>PLAYER_VELOCITY</code> constant.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="move_up-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/player.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">move_up</span>
+  <span class="ruby-ivar">@y</span> <span class="ruby-operator">-=</span> <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">PLAYER_VELOCITY</span>
+  <span class="ruby-ivar">@y_change</span> = <span class="ruby-operator">-</span><span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">PLAYER_VELOCITY</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-shoot_down" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">shoot_down</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the shooting vector&#39;s y part to <code>BULLET_VELOCITY</code>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="shoot_down-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/player.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">shoot_down</span>
+  <span class="ruby-ivar">@shoot_vec_y</span> = <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">BULLET_VELOCITY</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-shoot_left" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">shoot_left</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the shooting vector&#39;s x part to <code>-BULLET_VELOCITY</code>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="shoot_left-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/player.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">shoot_left</span>
+  <span class="ruby-ivar">@shoot_vec_x</span> = <span class="ruby-operator">-</span><span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">BULLET_VELOCITY</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-shoot_right" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">shoot_right</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the shooting vector&#39;s x part to <code>BULLET_VELOCITY</code>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="shoot_right-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/player.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">shoot_right</span>
+  <span class="ruby-ivar">@shoot_vec_x</span> = <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">BULLET_VELOCITY</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-shoot_up" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">shoot_up</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the shooting vector&#39;s y part to <code>-BULLET_VELOCITY</code>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="shoot_up-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/player.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">shoot_up</span>
+  <span class="ruby-ivar">@shoot_vec_y</span> = <span class="ruby-operator">-</span><span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">BULLET_VELOCITY</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Method updating the player each frame. Player&#39;s sprite gets rotated to
+correspond to his movement direction. In case they&#39;re out of bounds the
+player&#39;s coordinates are corrected and bullets are shot if possible.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File lib/prkwars/player.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+  <span class="ruby-identifier">rotate_player</span>
+  <span class="ruby-identifier">correct_coords</span>(<span class="ruby-keyword">self</span>, <span class="ruby-ivar">@gamespace</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">in_bounds</span>(<span class="ruby-keyword">self</span>, <span class="ruby-ivar">@gamespace</span>)
+  <span class="ruby-ivar">@shoot_timer</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@shoot_timer</span> <span class="ruby-operator">==</span> <span class="ruby-constant">SHOOT_GAP</span>
+
+  <span class="ruby-identifier">shoot_bullet</span>
+  <span class="ruby-ivar">@shoot_timer</span> = <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
